@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsumerProducer", "Consume
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jobs", "Jobs\Jobs.csproj", "{A2252BED-19E0-44CB-BD6F-47D2FF2A5432}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadedPrimeCalcIDAN", "ThreadedPrimeCalcIDAN\ThreadedPrimeCalcIDAN.csproj", "{9FD7A39E-31B2-457A-882A-4053414E06E2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{A2252BED-19E0-44CB-BD6F-47D2FF2A5432}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A2252BED-19E0-44CB-BD6F-47D2FF2A5432}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A2252BED-19E0-44CB-BD6F-47D2FF2A5432}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FD7A39E-31B2-457A-882A-4053414E06E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FD7A39E-31B2-457A-882A-4053414E06E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FD7A39E-31B2-457A-882A-4053414E06E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FD7A39E-31B2-457A-882A-4053414E06E2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
