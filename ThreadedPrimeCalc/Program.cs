@@ -21,7 +21,7 @@ namespace ThreadedPrimeCalc
             for (int i = 2; i < 15; i++)
             {
                 s.Start();
-                primes = CalcPrimes(3, 10000000, i);
+                primes = CalcPrimes(3, 1000000, i);
                 s.Stop();
                 Console.WriteLine("With {0} threads is took {1}ms to find the {2} primes", i, s.ElapsedMilliseconds, primes);
                 ThreadsToTimeDict[s.ElapsedMilliseconds] = i;
@@ -71,7 +71,7 @@ namespace ThreadedPrimeCalc
         public static bool IsPrime(int num)
         {
             if (num <= 1) return false;
-            if (num < 4) return true;
+            if (num <= 3) return true;
             for (int i = 2; i <= Math.Sqrt(num); i++)
                 if (num % i == 0)
                     return false;
