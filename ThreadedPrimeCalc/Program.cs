@@ -14,7 +14,7 @@ namespace ThreadedPrimeCalc
     {
         static void Main(string[] args)
         {
-            int primes, min;
+            int primes;
             Stopwatch s = new Stopwatch();
             Dictionary<long, int> ThreadsToTimeDict = new Dictionary<long, int>();
 
@@ -28,43 +28,39 @@ namespace ThreadedPrimeCalc
                 s.Reset();
             }
             long bestTime = ThreadsToTimeDict.Keys.Min();
-            Console.WriteLine("The best time is {0} with {1} threads", bestTime, ThreadsToTimeDict[bestTime]);
+            Console.WriteLine("The best time is {0}ms with {1} threads", bestTime, ThreadsToTimeDict[bestTime]);
             Console.ReadKey();
         }
 
         public static int CalcPrimes(int from, int to, int numOfThreads)
         {
-            ConcurrentQueue<int> primes = new ConcurrentQueue<int>();
+            int result = 0;
+            object _lock = new object();
             List<Thread> threads = new List<Thread>();
             int delta = (to - from) / numOfThreads;
             for (int i = 0; i < numOfThreads; i++)
             {
-                int start = from + (delta * i), end = from + (delta * (i + 1));
+                int start = from + (delta * i), end = start + delta;
                 if (i == numOfThreads - 1) end = to;
 
-                Thread t = new Thread(() => 
+                Thread t = new Thread(() =>
                 {
                     int counter = 0;
                     for (int num = start; num < end; num++)
-                    {
                         if (IsPrime(num))
-                        {
                             counter++;
-                            primes.Enqueue(num);
-                        }
-                    }
-                    //Console.WriteLine("From {0} to {1} there are: {2}", start, end, counter);
+
+                    lock (_lock) result += counter; 
                 });
+
+                t.Start();
                 threads.Add(t);
             }
 
             foreach (Thread t in threads)
-                t.Start();
-
-            foreach (Thread t in threads)
                 t.Join();
 
-            return primes.Count();
+            return result;
 
         }
 
