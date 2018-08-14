@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Threading;
 
 namespace ThreadedPrimeCalcIDAN
@@ -14,46 +15,52 @@ namespace ThreadedPrimeCalcIDAN
             int to = int.Parse(Console.ReadLine());
             Console.WriteLine("Threads?");
             int thrds = int.Parse(Console.ReadLine());
-            CalcPrimes(from, to, thrds);
+            
+            Stopwatch s = Stopwatch.StartNew();
+            Console.WriteLine(CalcPrimes(from, to, thrds));
+            s.Stop();
+            Console.WriteLine($"Time: {s.Elapsed}");
         }
 
-        private static void CalcPrimes(int from, int to, int numofthreads)
+        private static int CalcPrimes(int from, int to, int numofthreads)
         {
-            ConcurrentBag<int> primes;
-            primes = new ConcurrentBag<int>();
+            ConcurrentQueue<int> primes = new ConcurrentQueue<int>();
             List<Thread> threads = new List<Thread>();
+            int delta = (to - from) / numofthreads;
 
             for (int t = 0; t < numofthreads; t++)
             {
-                int delta = (to - from) / numofthreads;
-                int start = delta * t;
-                int end = to - delta;
+                int start = (delta * t) + from;
+                int end = (t == numofthreads - 1) ? start + delta : to;
 
                 Thread thread = new Thread(() =>
                 {
-                    int cnt = 0;
-                    for (int i = from; i < delta; i++)
+                    for (int i = start; i < end; i++)
                     {
                         if (IsPrime(i))
                         {
-                            cnt++;
-                            primes.Add(i);
+                            primes.Enqueue(i);
                             Console.WriteLine("{0}'s prime. Thread #{1}", i, t);
                         }
                     }
                 });
+                thread.Start();
                 threads.Add(thread);
             }
+
+            foreach (Thread t in threads)
+                t.Join();
+
+            return primes.Count;
         }
 
         private static bool IsPrime(int number)
         {
             if (number < 2) return false;
-            if (number % 2 == 0) return (number == 2);
 
             int root = (int) Math.Sqrt((double) number);
 
-            for (int i = 3; i <= root; i += 2)
+            for (int i = 2; i <= root; i++)
             {
                 if (number % i == 0) return false;
             }
