@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SomeBigLib", "SomeBigLib\So
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadPoolAndAutoResetEvent", "ThreadPoolAndAutoResetEvent\ThreadPoolAndAutoResetEvent.csproj", "{C235589B-3E5B-41ED-90B9-8624FC7A2A0F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tasks", "Tasks\Tasks.csproj", "{EE37397B-E810-4D0F-BD0F-3BACADCDC90E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{C235589B-3E5B-41ED-90B9-8624FC7A2A0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C235589B-3E5B-41ED-90B9-8624FC7A2A0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C235589B-3E5B-41ED-90B9-8624FC7A2A0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE37397B-E810-4D0F-BD0F-3BACADCDC90E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE37397B-E810-4D0F-BD0F-3BACADCDC90E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE37397B-E810-4D0F-BD0F-3BACADCDC90E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE37397B-E810-4D0F-BD0F-3BACADCDC90E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
