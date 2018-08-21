@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jobs", "Jobs\Jobs.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadedPrimeCalcIDAN", "ThreadedPrimeCalcIDAN\ThreadedPrimeCalcIDAN.csproj", "{9FD7A39E-31B2-457A-882A-4053414E06E2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SomeBigLib", "SomeBigLib\SomeBigLib.csproj", "{D2A27A3C-4673-495F-8110-3B871E0EB758}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadPoolAndAutoResetEvent", "ThreadPoolAndAutoResetEvent\ThreadPoolAndAutoResetEvent.csproj", "{C235589B-3E5B-41ED-90B9-8624FC7A2A0F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{9FD7A39E-31B2-457A-882A-4053414E06E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9FD7A39E-31B2-457A-882A-4053414E06E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9FD7A39E-31B2-457A-882A-4053414E06E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2A27A3C-4673-495F-8110-3B871E0EB758}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2A27A3C-4673-495F-8110-3B871E0EB758}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2A27A3C-4673-495F-8110-3B871E0EB758}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2A27A3C-4673-495F-8110-3B871E0EB758}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C235589B-3E5B-41ED-90B9-8624FC7A2A0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C235589B-3E5B-41ED-90B9-8624FC7A2A0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C235589B-3E5B-41ED-90B9-8624FC7A2A0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C235589B-3E5B-41ED-90B9-8624FC7A2A0F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
